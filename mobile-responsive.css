@@ -1,0 +1,50 @@
+/* =====================================================================
+   Landing page — additional responsive fixes (index.html only)
+   This file is purely additive: it does not override or remove any
+   existing desktop/tablet styling from style.css or redesign.css.
+   It only steps in below the breakpoints where those files leave gaps,
+   so nothing changes above ~560px / ~480px / ~400px.
+   ===================================================================== */
+
+/* Prevent the page-wide horizontal scroll caused by decorative background
+   blur circles (#featured-projects:before, .testimonials-section:before)
+   that extend past the viewport edge at narrower widths. Purely a
+   scroll-container fix — the circles themselves are unchanged, just
+   clipped exactly like the About section already clips its own. */
+html{
+  overflow-x:hidden;
+}
+
+/* ---------------------------------------------------------------------
+   Header: below 480px the "Log in" link and "Get Started" button start
+   colliding/wrapping. Shrink them just enough to fit on one line again.
+--------------------------------------------------------------------- */
+@media(max-width:480px){
+  .landing-nav{padding:0 14px;column-gap:12px}
+  .landing-brand{font-size:18px;gap:7px}
+  .landing-logo-img{width:30px;height:25px}
+  .landing-actions{gap:6px}
+  .landing-actions a{white-space:nowrap}
+  .landing-actions a[href="login.html"]{font-size:11px}
+  .landing-actions a:not([href="login.html"]){padding:10px 14px;font-size:11px}
+}
+
+/* ---------------------------------------------------------------------
+   "Our Mission" banner: the fixed 195px left margin (reserved for the
+   decorative art) no longer leaves room for the heading/paragraph/button
+   once the card gets this narrow, cutting off text. Stack it instead.
+--------------------------------------------------------------------- */
+@media(max-width:480px){
+  .mission{flex-direction:column;align-items:flex-start;gap:14px;padding:20px}
+  .mission>div{margin-left:0}
+  .learn{margin-left:0}
+}
+
+/* ---------------------------------------------------------------------
+   Testimonials: the 2-column layout (set at 850px) gets too cramped on
+   phones, wrapping quotes to near one word per line. Single column
+   below 560px only; 850px–560px keeps the existing 2-column behavior.
+--------------------------------------------------------------------- */
+@media(max-width:560px){
+  .testimonials-section .testimonials-grid{grid-template-columns:1fr}
+}
