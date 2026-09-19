@@ -6,13 +6,26 @@
    so nothing changes above ~560px / ~480px / ~400px.
    ===================================================================== */
 
-/* Prevent the page-wide horizontal scroll caused by decorative background
-   blur circles (#featured-projects:before, .testimonials-section:before)
-   that extend past the viewport edge at narrower widths. Purely a
-   scroll-container fix — the circles themselves are unchanged, just
-   clipped exactly like the About section already clips its own. */
-html{
+/* Root-cause fix for the page-wide horizontal overflow: two decorative
+   background blur circles (#featured-projects:before and
+   .testimonials-section:before) are fixed at 900px/420px wide and were
+   never clipped by their own section, so the whole document became wider
+   than the screen — that's the "extra space" / "not full width" gap.
+   #about-novatech already clips its matching circles this same way
+   (overflow:hidden in redesign.css); this just applies that same,
+   already-established pattern to the other two sections. The circles
+   themselves, their colors and position are completely unchanged —
+   only the part that spilled past the section edge is now hidden. */
+#featured-projects,
+.testimonials-section{
+  overflow:hidden;
+}
+
+/* Belt-and-braces: also stop horizontal rubber-band scroll on the
+   document itself on any remaining browser quirks. */
+html,body{
   overflow-x:hidden;
+  max-width:100%;
 }
 
 /* ---------------------------------------------------------------------
