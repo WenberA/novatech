@@ -1,0 +1,132 @@
+/* ===================================================================
+   Marketing pages (products / solutions / pricing / about / contact)
+   Additive stylesheet — loaded alongside style.css. Reuses existing
+   brand tokens (.card, .eyebrow, .button, .outline-button, .icon,
+   .section-block, .section-head, .faq-list, .pricing-grid, etc.)
+   and only adds new, non-colliding classes below.
+   =================================================================== */
+
+/* ---------- Page hero (split copy / media) ---------- */
+.page-hero{max-width:1536px;margin:0 auto;padding:56px 34px 8px}
+.page-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.page-hero-copy .eyebrow{margin-bottom:14px}
+.page-hero-copy h1{font-size:42px;line-height:1.12;letter-spacing:-1.2px;margin:0 0 16px;color:#071a46;font-weight:800}
+.page-hero-copy p{font-size:15px;line-height:1.65;color:#5573ae;margin:0 0 26px;max-width:480px}
+.page-hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.page-hero-media{border-radius:16px;overflow:hidden;border:1px solid #dceafa;box-shadow:0 24px 48px -20px rgba(8,40,110,.28)}
+.page-hero-media img{display:block;width:100%;height:380px;object-fit:cover}
+
+/* ---------- Generic page section spacing (mirrors .section-block) ---------- */
+.page-section{max-width:1536px;margin:64px auto 0;padding:0 34px}
+.page-section.tight{margin-top:40px}
+
+/* ---------- Feature tile grid (Products) ---------- */
+.feature-tile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feature-tile{background:#f9fcff;border:1px solid #dceafa;border-radius:12px;padding:24px 22px;transition:border-color .15s ease,background .15s ease}
+.feature-tile:hover{border-color:#bcd6fb;background:#eff6ff}
+.feature-tile i{width:40px;height:40px;border-radius:11px;background:#dfedff;color:#1168ff;display:grid;place-items:center;font-size:19px;margin-bottom:14px}
+.feature-tile b{display:block;font-size:14px;color:#071a46;margin-bottom:6px}
+.feature-tile span{display:block;font-size:12.5px;line-height:1.55;color:#5573ae}
+
+/* ---------- Showcase rows (image + copy, alternating) ---------- */
+.showcase-row{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;padding:48px 0}
+.showcase-row.reverse .showcase-media{order:2}
+.showcase-row.reverse .showcase-copy{order:1}
+.showcase-media{border-radius:14px;overflow:hidden;border:1px solid #dceafa;background:#eef6ff}
+.showcase-media img{display:block;width:100%;height:320px;object-fit:cover}
+.showcase-copy .eyebrow{margin-bottom:12px}
+.showcase-copy h2{font-size:26px;line-height:1.2;letter-spacing:-.6px;margin:0 0 12px;color:#071a46}
+.showcase-copy p{font-size:13.5px;line-height:1.65;color:#5573ae;margin:0 0 18px}
+.showcase-list{list-style:none;margin:0;padding:0;display:grid;gap:11px;font-size:12.5px;color:#33456e}
+.showcase-list li{display:flex;align-items:center;gap:9px}
+.showcase-list li i{width:18px;height:18px;border-radius:50%;background:#dfedff;color:#1168ff;display:grid;place-items:center;font-size:10px;flex-shrink:0}
+.row-divider{border:0;border-top:1px solid #e6eefb;margin:0}
+
+/* ---------- Solutions grid ---------- */
+.solution-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.solution-card{background:#f9fcff;border:1px solid #dceafa;border-radius:12px;padding:26px 22px;display:flex;flex-direction:column;gap:12px;transition:transform .15s ease,border-color .15s ease}
+.solution-card:hover{border-color:#bcd6fb;transform:translateY(-3px)}
+.solution-card i{width:42px;height:42px;border-radius:11px;background:#dfedff;color:#1168ff;display:grid;place-items:center;font-size:20px}
+.solution-card b{font-size:15px;color:#071a46}
+.solution-card p{margin:0;font-size:12.5px;line-height:1.6;color:#5573ae}
+.solution-card a{margin-top:auto;font-size:12px;font-weight:700;color:#0864ff;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.solution-card a:hover{text-decoration:underline}
+
+/* ---------- Value grid (About) ---------- */
+.value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.value-card{background:#f9fcff;border:1px solid #dceafa;border-radius:12px;padding:22px 20px}
+.value-card i{width:38px;height:38px;border-radius:10px;background:#dfedff;color:#1168ff;display:grid;place-items:center;font-size:18px;margin-bottom:12px}
+.value-card b{display:block;font-size:13.5px;color:#071a46;margin-bottom:6px}
+.value-card span{display:block;font-size:12px;line-height:1.55;color:#5573ae}
+
+/* ---------- Stat strip (About) ---------- */
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat-chip{background:#eef6ff;border:1px solid #dceafa;border-radius:12px;padding:22px 18px;text-align:center}
+.stat-chip b{display:block;font-size:26px;letter-spacing:-.6px;color:#071a46}
+.stat-chip span{display:block;font-size:11px;color:#5573ae;margin-top:4px}
+
+/* ---------- Mission banner (About) — reuses mission-art asset ---------- */
+.about-mission{border-radius:14px;padding:38px 40px;color:#fff;position:relative;overflow:hidden;background-image:linear-gradient(100deg,#04205e 0%,#0653e8 55%,#188dff 100%);display:flex;align-items:center;gap:40px}
+.about-mission-copy{max-width:560px;position:relative;z-index:1}
+.about-mission .eyebrow{color:#bcdcff}
+.about-mission h2{font-size:26px;line-height:1.2;margin:10px 0 12px}
+.about-mission p{font-size:13.5px;line-height:1.65;color:#d4e0fa;margin:0}
+.about-mission-art{position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:340px;height:340px;opacity:.9;object-fit:contain;pointer-events:none}
+
+/* ---------- Team grid (About) ---------- */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.team-card{background:#f9fcff;border:1px solid #dceafa;border-radius:12px;padding:22px 18px;text-align:center}
+.team-avatar{width:64px;height:64px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;background:linear-gradient(135deg,#0077ff 15%,#34a7ff 48%,#1655df 49%);color:#fff;font-size:22px;font-weight:800}
+.team-card b{display:block;font-size:13px;color:#071a46}
+.team-card span{display:block;font-size:11px;color:#5573ae;margin-top:3px}
+
+/* ---------- Final CTA banner (all pages) ---------- */
+.final-cta{max-width:1536px;margin:64px auto 0;padding:0 34px}
+.final-cta-inner{background:#061c42;border-radius:16px;padding:44px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;overflow:hidden}
+.final-cta-inner:before{content:"";position:absolute;inset:0;background:radial-gradient(600px 200px at 85% 0%,rgba(24,141,255,.35),transparent 70%)}
+.final-cta-copy{position:relative;z-index:1;max-width:520px}
+.final-cta-copy span.eyebrow{color:#8fc4ff}
+.final-cta-copy h2{color:#fff;font-size:24px;line-height:1.25;margin:10px 0 8px}
+.final-cta-copy p{color:#c4d5f5;font-size:13px;line-height:1.6;margin:0}
+.final-cta-actions{position:relative;z-index:1;display:flex;gap:12px;flex-shrink:0}
+
+/* ---------- Contact page ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr .82fr;gap:14px;align-items:start}
+.contact-form-card{background:#f9fcff;border:1px solid #dceafa;border-radius:14px;padding:34px}
+.contact-form-card h2{font-size:20px;color:#071a46;margin:0 0 6px}
+.contact-form-card>p{font-size:12.5px;color:#5573ae;margin:0 0 24px}
+.contact-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-form-grid .field.full{grid-column:1/3}
+.contact-info-stack{display:grid;gap:14px}
+.contact-info-card{background:#f9fcff;border:1px solid #dceafa;border-radius:14px;padding:22px 20px;display:flex;gap:14px;align-items:flex-start}
+.contact-info-card i{width:40px;height:40px;border-radius:11px;background:#dfedff;color:#1168ff;display:grid;place-items:center;font-size:18px;flex-shrink:0}
+.contact-info-card b{display:block;font-size:13.5px;color:#071a46;margin-bottom:4px}
+.contact-info-card span,.contact-info-card a{display:block;font-size:12.5px;color:#5573ae;text-decoration:none;line-height:1.6}
+.contact-info-card a:hover{color:#0864ff}
+.contact-map{border-radius:14px;overflow:hidden;border:1px solid #dceafa}
+.contact-map img{display:block;width:100%;height:180px;object-fit:cover}
+
+/* ---------- Responsive ---------- */
+@media(max-width:980px){
+  .page-hero-inner{grid-template-columns:1fr}
+  .page-hero-media{order:-1}
+  .page-hero-media img{height:260px}
+  .feature-tile-grid,.solution-grid{grid-template-columns:1fr 1fr}
+  .value-grid,.stat-strip,.team-grid{grid-template-columns:1fr 1fr}
+  .showcase-row,.showcase-row.reverse{grid-template-columns:1fr}
+  .showcase-row.reverse .showcase-media,.showcase-row.reverse .showcase-copy{order:0}
+  .showcase-media img{height:240px}
+  .about-mission{flex-direction:column;text-align:center;padding:32px 24px}
+  .about-mission-art{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .final-cta-inner{flex-direction:column;text-align:center}
+}
+@media(max-width:620px){
+  .page-hero{padding:36px 20px 8px}
+  .page-hero-copy h1{font-size:30px}
+  .page-section{padding:0 20px}
+  .feature-tile-grid,.solution-grid,.value-grid,.stat-strip,.team-grid{grid-template-columns:1fr}
+  .contact-form-grid{grid-template-columns:1fr}
+  .contact-form-grid .field.full{grid-column:1/2}
+  .final-cta{padding:0 20px}
+}
